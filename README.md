@@ -35,3 +35,32 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+
+Trip PWA
+----
+
+> Very simple code to demonstrate Progressive Web Apps.
+
+### Usage
+
+This demo app runs on `localhost`.
+
+```bash
+npm install http-server -g
+http-server -c-1 # with cache disabled
+```
+
+Then open <http://localhost:8080> with Chrome.
+
+Change `cacheStorageKey` in `sw.js` to update app version.
+
+### Trouble shooting
+
+* Why `-c-1` to disable cache?
+
+`sw.js` can be cached by HTTP Caches, then in debugging we could get unexpected behaviors. Disable the cache to simplify the problem.
+
+### License
+
+MIT
