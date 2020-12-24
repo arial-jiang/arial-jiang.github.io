@@ -1,11 +1,41 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
-        <title>搏客</title>
-    </head>
-    <body>
-        1111111
-    </body>
-</html>
+
+<head>
+    <title>trip PWA</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="icon" href="/img/icon.png" type="image/png" />
+  </head>
+  
+  <body>
+    <div class="revision">hello everyone</div>
+    <img src="/img/trival.jpg">
+    <div class="title">
+      Ready to Travel
+    </div>
+    <div class="main-text">
+      <p>Choose your destination, plan your trip.</p>
+      <p>Pick the best place for your holiday</p>
+    </div>
+    <div class="network-message">
+      Network:
+      <span id="network-status" class="">Good</span>
+    </div>
+    <script type="text/javascript">
+      if (navigator.serviceWorker != null) {
+        navigator.serviceWorker.register('sw.js')
+        .then(function(registration) {
+          console.log('Registered events at scope: ', registration.scope);
+        });
+      }
+  
+      fetch('./data.json')
+  
+      var statusEl = document.querySelector('#network-status')
+      if (!navigator.onLine) {
+        statusEl.classList = ['is-offline']
+        statusEl.innerText = 'Offline'
+      }
+    </script>
+  </body>
+  
